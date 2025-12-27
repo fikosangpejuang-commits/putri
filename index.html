@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebuah Pengakuan Diam-Diam</title>
+
+<!-- Font klasik -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0,80,120,0.6), rgba(0,80,120,0.6)),
+    url('foto.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  padding: 30px;
+  animation: fadeIn 2s ease forwards;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: slideUp 1.5s ease forwards;
+}
+
+.subtitle {
+  font-style: italic;
+  margin-bottom: 25px;
+  opacity: 0;
+  animation: slideUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  opacity: 0;
+  animation: fadeText 1.5s ease forwards;
+}
+
+/* Delay bertahap */
+p:nth-of-type(1) { animation-delay: 1s; }
+p:nth-of-type(2) { animation-delay: 2s; }
+p:nth-of-type(3) { animation-delay: 3s; }
+
+.hint {
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+</head>
+
+<body onclick="playMusic()">
+
+<div class="container">
+  <h1>Keisya Putri Salsabila</h1>
+  <div class="subtitle">" Sebuah Pengakuan Diam-Diam "</div>
+
+  <p>
+    Di belahan bumi ini, aku tidak meminta banyak hal. Aku hanya ingin kau tahu
+    bahwa pada saat kau tertidur pulas dan dunia menjadi sunyi, aku dengan tenang
+    menyebut namamu dalam doa-doaku yang panjang.
+  </p>
+
+  <p>
+    Aku mencintaimu tanpa mengharap balasan, seperti laut yang setia mencintai pantai;
+    meski aku harus pergi dan datang berkali-kali tanpa henti, tujuanku tetaplah dirimu.
+  </p>
+
+  <p>
+    Bagiku, bahagia sesederhana melihat senyum kecilmu yang tersimpan abadi dalam ingatanku.
+    Senyum itulah yang membuat duniaku jauh lebih terang daripada ribuan lentera yang menyala sekaligus.
+  </p>
+
+  <div class="hint">sentuh layar untuk memulai musik 🎵</div>
+</div>
+
+<audio id="musik" src="lagu.mp3"></audio>
+
+<script>
+function playMusic() {
+  const audio = document.getElementById("musik");
+  audio.play();
+}
+</script>
+
+</body>
+</html>
